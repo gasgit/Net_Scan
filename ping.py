@@ -7,7 +7,7 @@ ip_list = ["192.168.0.1", "192.168.0.108", "8.8.8.8"]
 
 # goal is to buils quick check tool to check status lan/wan 
 # devices up/down
-# early days
+# earl
 
 
 
