@@ -1,10 +1,13 @@
+from flask import Flask, render_template
+app = Flask(__name__)
+
 
 import os
 
 
-ip_list = {"HQ DC":"001DC1", "HQ FP":"001FP1", "EH DC":"159DC1", "EH FP": "159FP1", "CN DC":"015DC2", "CN FP":"015FP1",
-            "SB DC": "007DC1", "SB FP": "007FP1", "AL DC": "069DC1", "AL FP": "069FP1", "AP DC": "146DC1", "AP FP":"146FP1",
-            "YP DC": "203DC1", "YP FP": "203FP1"}
+ip_list = {"Athenry HQ DC1":"001DC1", "Athenry HQ FP1":"001FP1", "Eachreidh DC1":"159DC1", "Eachreidh FP1": "159FP1", "Clairn DC":"015DC2", "Clairn FP":"015FP1",
+            "St Brigids DC": "007DC1", "St Brigids FP": "007FP1", "AL Loughrea DC": "069DC1", "AL Loughrea FP": "069FP1", "AL Portumna DC": "146DC1", "AL Portumna FP":"146FP1",
+            "YR Portumna DC": "203DC1", "YR Portumna FP": "203FP2"}
 
 #ip_list = {"CF1":"1.1.1.1","GE1":"8.8.8.8","GE2":"8.8.4.4"}
 # build quick check tool to check status lan/wan 
@@ -58,3 +61,13 @@ print_offline(offline)
 
 
 
+
+
+@app.route("/api/servers")
+def hello():
+
+   return render_template('index.html', online= online, offline=offline)
+
+
+if __name__ == '__main__':
+    app.run()
