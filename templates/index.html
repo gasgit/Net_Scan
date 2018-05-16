@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block body %}
+
+<div class="jumbotron">
+    <h3>Run Test</h3>
+    <p>Each time run is hit the results are appended to the collection</p>
+    <h3>Re-Run</h3>
+    <p>Re-Run will clear the collection and produce a single pass</p>
+</div>
+
+
+<div class="container-fluid">
+
+    <a href="/api/servers/display" type="button" class="btn btn-primary btn-block">Run Test</a>
+
+</div>
+
+{% endblock %}
