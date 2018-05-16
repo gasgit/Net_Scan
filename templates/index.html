@@ -14,53 +14,47 @@
             border-bottom: 1px solid #ddd;
         }
 
-        tr.redCol { background-color: #E67E22; }
+        tr.redCol {
+            background-color: #E67E22;
+        }
 
-         tr.greenCol { background-color: #AAB7B8; }
+        tr.greenCol {
+            background-color: #AAB7B8;
+        }
 
         /* tr:nth-child(even) {
-            background-color: #f2f2f2
-        } */
+                        background-color: #f2f2f2
+                    } */
 
         th {
-            background-color:#3498DB;
+            background-color: #3498DB;
             color: white;
+            position: sticky;
+            top: 0px;
         }
     </style>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
 
+    <div class="container-fluid">
 
 
-    <table>
-
-        <tr>
-            <th>Location</th>
-            <th>Server</th>
-            <th>Status</th>
-            <th>IP Address</th>
-
-        </tr>
-        {% for obj in status_collection %}
-
-        <tr class="greenCol">
-           
-            <td>{{ obj.server_location }}</td>
-            <td>{{ obj.server_name }}</td>
-            <td>{{ obj.server_status }}</td>
-            <td>{{ obj.server_ip }}</td>
-           
+        <h2>Server Test GRETB</h2>
+    </div>
 
 
-        </tr>
+    <div class="container-fluid">
 
-        {% endfor %}
+        <a href="/api/servers/rerun" type="button" class="btn btn-primary btn-block">Begin Test</a>
 
-    </table>
-
-     
-    <a href="/api/servers/rerun"><input type="button" value="Run Test Again"></a>
+    </div>
 
 </body>
 
