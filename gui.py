@@ -13,6 +13,13 @@ ip_list = {"ATH HQ DC1":"001DC1", "ATH HQ FP1":"001FP1", "EH DC1":"159DC1", "EH 
 status_collection = []
 
 
+
+# TODO
+# 404
+# fix landing
+# get more attributes from ping
+
+
 class MyStatusObject:
     def __init__(self, server_location, server_name, server_status, server_ip, status_time):
         self.server_location = server_location
