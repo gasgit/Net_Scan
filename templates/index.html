@@ -39,30 +39,28 @@
             <th>Location</th>
             <th>Server</th>
             <th>Status</th>
+            <th>IP Address</th>
 
         </tr>
-        {% for k,v in online.items() %}
+        {% for obj in status_collection %}
 
         <tr class="greenCol">
-            <td>{{ k.0 }}</td>
-            <td>{{ k.1 }}</td>
-            <td>{{ v }}</td>
+           
+            <td>{{ obj.server_location }}</td>
+            <td>{{ obj.server_name }}</td>
+            <td>{{ obj.server_status }}</td>
+            <td>{{ obj.server_ip }}</td>
+           
 
 
         </tr>
 
-        {% endfor %} {% for i,j in offline.items() %}
-        <tr class="redCol">
-            <td>{{ i.0 }}</td>
-            <td>{{ i.1 }}</td>
-            <td>{{ j }}</td>
-
-        </tr>
         {% endfor %}
 
     </table>
 
-   
+     
+    <a href="/api/servers/rerun"><input type="button" value="Run Test Again"></a>
 
 </body>
 
