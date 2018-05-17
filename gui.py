@@ -1,7 +1,7 @@
 from flask import Flask, render_template
-import os, socket, datetime, platform, subprocess
+import os
+import socket, datetime, platform, subprocess
 app = Flask(__name__)
-
 
 # list locations and hostnames | ip addresses
 # ip_list = {"ATH HQ DC1":"001DC1", "ATH HQ FP1":"001FP1", "EH DC1":"159DC1", "EH FP1":"159FP1", "CLN DC":"015DC2", "CLN FP":"015FP1",
@@ -12,19 +12,13 @@ app = Flask(__name__)
 ip_list = {"CF1":"1.1.1.1","CF2":"1.0.0.1","GE1":"8.8.8.8","GE2":"8.8.4.4","Virgin":"virginmedia.ie", "Google":"google.ie", "Bing":"bing.ie",
 "Python":"python.org"}
 
-
-
-
 # list to store MyStatusObjects
 status_collection = []
-
-
 
 # TODO
 # 404
 # fix landing
 # get more attributes from ping
-
 
 # create objects
 class MyStatusObject:
@@ -39,18 +33,13 @@ class MyStatusObject:
     def __repr__(self):
         return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " + self.server_status + "\nIP: " + self.server_ip + "\nTE: " + self.status_time + "\nPL: " + self.server_platform
 
-
-
 # get current platform
 p = platform.system()
-
-
 
 # check platform, ping, response, time, ip & create object
 def check_ping(k,v):
     ip = socket.gethostbyname(v)
-    
-   
+      
     if p == 'Linux':
         response = os.system("ping -c 1 " + v)
         
@@ -75,7 +64,6 @@ def pass_iplist(ip_list):
 def print_status_collection(col):
     for obj in col:
         print obj
-
 
 # landing page 
 @app.route('/api/servers/')
