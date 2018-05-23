@@ -5,7 +5,6 @@ import socket, datetime, platform, subprocess
 import ckpm 
 app = Flask(__name__)
 
-
 ckpm.ckeck_platform()
 
 # list locations and hostnames | ip addresses
@@ -65,21 +64,16 @@ def check_ping(k,v):
 def pass_iplist(ip_list):
     for k,v in ip_list.items():
         check_ping(k,v)
+    return status_collection   
         
 def print_status_collection(col):
     for obj in col:
         print obj
 
 
-
-
-
-
 # landing page 
 @app.route('/api/servers/')
-def index():
- 
-    
+def index():   
     return render_template('index.html')
 
 # display results
@@ -95,10 +89,6 @@ def rerun():
     status_collection[:] = []
     pass_iplist(ip_list)
     return render_template('display_servers.html', status_collection= status_collection)
-
-
-
-
 
 
 if __name__ == '__main__':

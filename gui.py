@@ -6,10 +6,11 @@ except ImportError:  # Python 3
     from tkinter.ttk import *
 
 import ckpm 
-
 import os, time
 import socket, datetime, platform, subprocess
+import json
 
+status_collection = []
 
 
 
@@ -25,12 +26,7 @@ ip_list = {"ATH HQ DC1":"001DC1", "ATH HQ FP1":"001FP1", "EH DC1":"159DC1", "EH 
 # "Python":"python.org"}
 
 # list to store MyStatusObjects
-status_collection = []
-
-# TODO
-# 404
-# fix landing
-# get more attributes from ping
+#status_collection = []
 
 # create objects
 class MyStatusObject:
@@ -40,9 +36,10 @@ class MyStatusObject:
         self.server_status = server_status
         self.server_ip = server_ip
         self.server_platform = server_platform
+        
 
     def __repr__(self):
-        return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " + self.server_status + "\nIP: " + self.server_ip + "\nPL: " + self.server_platform
+        return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " + self.server_status + "\nIP: " + self.server_ip + "\nPL: " + self.server_platform 
 
 # get current platform
 p = platform.system()
@@ -57,7 +54,7 @@ def check_ping(k,v):
     elif p == 'Windows':
         response = os.system("ping -n 1 " + v)
         
-    stat_time = datetime.datetime.now()
+    date_time = datetime.datetime.now()
     if response == 0: 
         status = "Device Online" 
         my_new_object = MyStatusObject(k, v, status, ip, p)
@@ -76,15 +73,22 @@ def print_status_collection(col):
     for obj in col:
         print obj
 
+def writelogs(col):
+    with open('my_logs.txt', 'w') as f:
+        f.write(str(status_collection))
+        # for i in col:
+        #     f.write(i.server_ip)
+       
 
 
-print_status_collection(status_collection)
 pass_iplist(ip_list)
+print_status_collection(status_collection)
+writelogs(status_collection)
+
+
 
 
 time.sleep(1)
-
-
 
 class App(Frame):
 
@@ -95,10 +99,13 @@ class App(Frame):
         self.grid(sticky = (N,S,W,E))
         parent.grid_rowconfigure(0, weight = 1)
         parent.grid_columnconfigure(0, weight = 1)
+        
 
     def CreateUI(self):
         tv = Treeview(self)
+        
         tv['columns'] = ('servername','location', 'ip', 'status')
+        
 
         tv.heading("#0", text='DATE TIME', anchor='w')
         tv.column("#0", anchor="w", width=250)
@@ -115,23 +122,23 @@ class App(Frame):
 
         tv.heading('status', text='STATUS', anchor='w')
         tv.column('status', anchor='w', width=100)
-
-        
-
+  
         tv.grid(sticky = (N,S,W,E))
         self.treeview = tv
         self.grid_rowconfigure(0, weight = 1)
         self.grid_columnconfigure(0, weight = 1)
 
-       
-
-
-        
-
+    
+    
     def LoadTable(self):
 
+        
         for i in status_collection:
-            self.treeview.insert('', 'end',text=datetime.datetime.now(), values=(i.server_name,i.server_location, i.server_ip, i.server_status))
+            self.treeview.insert('', 'end',text=datetime.datetime.utcnow(), values=(i.server_name,i.server_location, i.server_ip, i.server_status))
+           
+       
+   
+
 
 def main():
     root = Tk()
