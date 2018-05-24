@@ -17,13 +17,13 @@ status_collection = []
 ckpm.ckeck_platform()
 
 # list locations and hostnames | ip addresses
-ip_list = {"ATH HQ DC1":"001DC1", "ATH HQ FP1":"001FP1", "EH DC1":"159DC1", "EH FP1":"159FP1", "CLN DC":"015DC2", "CLN FP":"015FP1",
-            "BRD DC":"007DC1", "BRD FP":"007FP1", "AL LA DC":"069DC1", "AL LA FP":"069FP1", "AL PA DC":"146DC1", "AL PA FP":"146FP1",
-            "YR PA DC":"203DC1", "YR PA FP":"203FP1", "KN DC": "009DC1", "KN FP":"009FP1", "AL CTN DC":"149DC1", "AL CTN FP": "149FP1",
-             "VT GY FP":"247FP1", "VT GY DC":"247DC1"}
+# #ip_list = {"ATH HQ DC1":"001DC1", "ATH HQ FP1":"001FP1", "EH DC1":"159DC1", "EH FP1":"159FP1", "CLN DC":"015DC2", "CLN FP":"015FP1",
+#             "BRD DC":"007DC1", "BRD FP":"007FP1", "AL LA DC":"069DC1", "AL LA FP":"069FP1", "AL PA DC":"146DC1", "AL PA FP":"146FP1",
+#             "YR PA DC":"203DC1", "YR PA FP":"203FP1", "KN DC": "009DC1", "KN FP":"009FP1", "AL CTN DC":"149DC1", "AL CTN FP": "149FP1",
+#              "VT GY FP":"247FP1", "VT GY DC":"247DC1"}
 
-# ip_list = {"CF1":"1.1.1.1","CF2":"1.0.0.1","GE1":"8.8.8.8","GE2":"8.8.4.4","Virgin":"virginmedia.ie", "Google":"google.ie", "Bing":"bing.ie",
-# "Python":"python.org"}
+ip_list = {"CF1":"1.1.1.1","CF2":"1.0.0.1","GE1":"8.8.8.8","GE2":"8.8.4.4","Virgin":"virginmedia.ie", "Google":"google.ie", "Bing":"bing.ie",
+"Python":"python.org"}
 
 # list to store MyStatusObjects
 #status_collection = []
@@ -71,7 +71,7 @@ def pass_iplist(ip_list):
         
 def print_status_collection(col):
     for obj in col:
-        print obj
+        print(obj)
 
 def writelogs(col):
     with open('my_logs.txt', 'w') as f:
