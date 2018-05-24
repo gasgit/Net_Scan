@@ -9,12 +9,9 @@ import ckpm
 import os, time
 import socket, datetime, platform, subprocess
 import json
+import pprint
 
-status_collection = []
-
-
-
-ckpm.ckeck_platform()
+##ckpm.ckeck_platform()
 
 # list locations and hostnames | ip addresses
 # #ip_list = {"ATH HQ DC1":"001DC1", "ATH HQ FP1":"001FP1", "EH DC1":"159DC1", "EH FP1":"159FP1", "CLN DC":"015DC2", "CLN FP":"015FP1",
@@ -26,20 +23,21 @@ ip_list = {"CF1":"1.1.1.1","CF2":"1.0.0.1","GE1":"8.8.8.8","GE2":"8.8.4.4","Virg
 "Python":"python.org"}
 
 # list to store MyStatusObjects
-#status_collection = []
+status_collection = []
+
 
 # create objects
 class MyStatusObject:
-    def __init__(self, server_location, server_name, server_status, server_ip, server_platform):
+    def __init__(self, server_location, server_name, server_status, server_ip, server_platform, test_time):
         self.server_location = server_location
         self.server_name = server_name
         self.server_status = server_status
         self.server_ip = server_ip
         self.server_platform = server_platform
+        self.test_time = test_time
         
-
     def __repr__(self):
-        return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " + self.server_status + "\nIP: " + self.server_ip + "\nPL: " + self.server_platform 
+        return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " + self.server_status + "\nIP: " + self.server_ip + "\nPL: " + self.server_platform + "\nTT: " + str(self.test_time)
 
 # get current platform
 p = platform.system()
@@ -47,6 +45,8 @@ p = platform.system()
 # check platform, ping, response, time, ip & create object
 def check_ping(k,v):
     ip = socket.gethostbyname(v)
+    ttime = datetime.datetime.now()
+   
       
     if p == 'Linux':
         response = os.system("ping -c 1 " + v)
@@ -57,12 +57,14 @@ def check_ping(k,v):
     date_time = datetime.datetime.now()
     if response == 0: 
         status = "Device Online" 
-        my_new_object = MyStatusObject(k, v, status, ip, p)
+        my_new_object = MyStatusObject(k, v, status, ip, p, ttime)
         status_collection.append(my_new_object)
+   
     else:
         status = "Device Error"
-        my_new_object = MyStatusObject(k, v, status, ip, p )
+        my_new_object = MyStatusObject(k, v, status, ip, p, ttime)
         status_collection.append(my_new_object)
+     
     return status
 
 def pass_iplist(ip_list):
@@ -74,16 +76,28 @@ def print_status_collection(col):
         print(obj)
 
 def writelogs(col):
-    with open('my_logs.txt', 'w') as f:
-        f.write(str(status_collection))
-        # for i in col:
-        #     f.write(i.server_ip)
+    json_string = json.dumps([ob.__dict__ for ob in col], indent=4,sort_keys=True, default=str)
+    if os.path.getsize('my_logs.json') == 0:
+        with open('my_logs.json', 'w') as f:
+            f.write(json_string)
+    else:
+        read_logs()
+
+current_logs = []
+
+def read_logs():
+     with open('my_logs.json') as f:
+        data = json.load(f)
+        print data
+        for i in data:
+            print i
+       
        
 
-
 pass_iplist(ip_list)
-print_status_collection(status_collection)
+#print_status_collection(status_collection)
 writelogs(status_collection)
+
 
 
 
@@ -134,7 +148,7 @@ class App(Frame):
 
         
         for i in status_collection:
-            self.treeview.insert('', 'end',text=datetime.datetime.utcnow(), values=(i.server_name,i.server_location, i.server_ip, i.server_status))
+            self.treeview.insert('', 'end',text=i.test_time, values=(i.server_name,i.server_location, i.server_ip, i.server_status))
            
        
    
