@@ -5,7 +5,7 @@
         "server_name": "159DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.010000"
+        "test_time": "2018-05-25 15:25:31.856000"
     }, 
     {
         "server_ip": "192.168.12.4", 
@@ -13,7 +13,7 @@
         "server_name": "015DC2", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.046000"
+        "test_time": "2018-05-25 15:25:31.906000"
     }, 
     {
         "server_ip": "192.168.12.6", 
@@ -21,7 +21,7 @@
         "server_name": "015FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.106000"
+        "test_time": "2018-05-25 15:25:31.959000"
     }, 
     {
         "server_ip": "192.168.10.3", 
@@ -29,7 +29,7 @@
         "server_name": "001DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.161000"
+        "test_time": "2018-05-25 15:25:32.003000"
     }, 
     {
         "server_ip": "192.168.44.6", 
@@ -37,7 +37,7 @@
         "server_name": "159FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.197000"
+        "test_time": "2018-05-25 15:25:32.036000"
     }, 
     {
         "server_ip": "192.168.64.3", 
@@ -45,7 +45,7 @@
         "server_name": "069DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.231000"
+        "test_time": "2018-05-25 15:25:32.069000"
     }, 
     {
         "server_ip": "192.168.62.6", 
@@ -53,7 +53,7 @@
         "server_name": "149FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.312000"
+        "test_time": "2018-05-25 15:25:32.136000"
     }, 
     {
         "server_ip": "192.168.64.6", 
@@ -61,7 +61,7 @@
         "server_name": "069FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.390000"
+        "test_time": "2018-05-25 15:25:32.222000"
     }, 
     {
         "server_ip": "192.168.74.3", 
@@ -69,7 +69,7 @@
         "server_name": "146DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.458000"
+        "test_time": "2018-05-25 15:25:32.295000"
     }, 
     {
         "server_ip": "192.168.36.6", 
@@ -77,7 +77,7 @@
         "server_name": "007FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.526000"
+        "test_time": "2018-05-25 15:25:32.361000"
     }, 
     {
         "server_ip": "192.168.42.3", 
@@ -85,7 +85,7 @@
         "server_name": "009DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.583000"
+        "test_time": "2018-05-25 15:25:32.405000"
     }, 
     {
         "server_ip": "192.168.96.4", 
@@ -93,7 +93,7 @@
         "server_name": "247FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.649000"
+        "test_time": "2018-05-25 15:25:32.474000"
     }, 
     {
         "server_ip": "192.168.36.3", 
@@ -101,7 +101,7 @@
         "server_name": "007DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.702000"
+        "test_time": "2018-05-25 15:25:32.532000"
     }, 
     {
         "server_ip": "192.168.96.3", 
@@ -109,7 +109,7 @@
         "server_name": "247DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.762000"
+        "test_time": "2018-05-25 15:25:32.576000"
     }, 
     {
         "server_ip": "192.168.14.6", 
@@ -117,7 +117,7 @@
         "server_name": "203FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.823000"
+        "test_time": "2018-05-25 15:25:32.628000"
     }, 
     {
         "server_ip": "192.168.42.6", 
@@ -125,7 +125,15 @@
         "server_name": "009FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.910000"
+        "test_time": "2018-05-25 15:25:32.723000"
+    }, 
+    {
+        "server_ip": "192.168.54.3", 
+        "server_location": "MY DC", 
+        "server_name": "047DC1", 
+        "server_platform": "Windows", 
+        "server_status": "Device Online", 
+        "test_time": "2018-05-25 15:25:32.779000"
     }, 
     {
         "server_ip": "192.168.14.3", 
@@ -133,7 +141,7 @@
         "server_name": "203DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:31.982000"
+        "test_time": "2018-05-25 15:25:32.845000"
     }, 
     {
         "server_ip": "192.168.10.6", 
@@ -141,7 +149,7 @@
         "server_name": "001FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:32.042000"
+        "test_time": "2018-05-25 15:25:32.905000"
     }, 
     {
         "server_ip": "192.168.62.3", 
@@ -149,7 +157,7 @@
         "server_name": "149DC1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:32.083000"
+        "test_time": "2018-05-25 15:25:32.951000"
     }, 
     {
         "server_ip": "192.168.74.6", 
@@ -157,6 +165,6 @@
         "server_name": "146FP1", 
         "server_platform": "Windows", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-24 16:15:32.162000"
+        "test_time": "2018-05-25 15:25:33.033000"
     }
 ]
