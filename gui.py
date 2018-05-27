@@ -61,7 +61,7 @@ def check_ping(k,v):
         status_collection.append(my_new_object)
    
     else:
-        status = "Device Error"
+        status = "Error"
         my_new_object = MyStatusObject(k, v, status, ip, p, ttime)
         status_collection.append(my_new_object)
      
@@ -126,9 +126,6 @@ writelogs(status_collection)
 
 
 
-
-time.sleep(1)
-
 class App(Frame):
 
     def __init__(self, parent):
@@ -141,7 +138,9 @@ class App(Frame):
         
 
     def CreateUI(self):
+
         tv = Treeview(self)
+       
         
         tv['columns'] = ('servername','location', 'ip', 'status')
         
@@ -175,9 +174,8 @@ class App(Frame):
         for i in status_collection:
             self.treeview.insert('', 'end',text=i.test_time, values=(i.server_name,i.server_location, i.server_ip, i.server_status))
            
-       
-   
 
+  
 
 def main():
     root = Tk()
