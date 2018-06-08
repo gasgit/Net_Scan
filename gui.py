@@ -31,7 +31,7 @@ class MyStatusObject:
         self.test_time = test_time
         
     def __repr__(self):
-        return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " + self.server_status + "\nIP: " + self.server_ip + "\nPL: " + self.server_platform + "\nTT: " + str(self.test_time)
+        return  "\nLN: " + self.server_location + "\nNM: " + self.server_name + "\nST: " +  self.server_status  + "\nIP: " + self.server_ip + "\nPL: " + self.server_platform + "\nTT: " + str(self.test_time)
 
 # get current platform
 p = platform.system()
@@ -67,7 +67,7 @@ def pass_iplist(ip_list):
         
 def print_status_collection(col):
     for obj in col:
-        print obj
+        print(obj)
 
 def writelogs(col):
     json_string = json.dumps([ob.__dict__ for ob in col], indent=4,sort_keys=True, default=str)
@@ -75,18 +75,43 @@ def writelogs(col):
         with open('my_logs.json', 'w') as f:
             f.write(json_string)
     else:
-        read_logs()
+        complete_logs(read_logs(col))
+
+
+
+
+
 
 current_logs = []
 
-def read_logs():
+def read_logs(col):
      with open('my_logs.json') as f:
         data = json.load(f)
         #print data
-        # for i in data:
-        #     print i
+        for i in data:
+            current_logs.append(i)
+        js_str = json.dumps([ob.__dict__ for ob in col], indent=4,sort_keys=True, default=str)
+        d = json.loads(js_str)
+        for x in d:
+            current_logs.append(x)
+        #pprint.pprint(js_str)
+
+        #print  current_logs
+
+        return current_logs
        
-       
+        
+def complete_logs(col):
+    try:
+      
+        new_logs = json.dumps([obj.__dict__ for obj in col], indent=4,sort_keys=True, default=str)
+        with open('my_logs.json','w') as g:
+           
+            g.write(new_logs)
+    except Exception, e:
+        print e 
+        return 0
+        
 
 pass_iplist(return_list())
 #print_status_collection(status_collection)
@@ -148,20 +173,10 @@ class App(Frame):
 
 def main():
     root = Tk()
+    root.style = Style()
+    #('clam', 'alt', 'default', 'classic')
+    root.style.theme_use("clam")
 
-    def refresh():
-        root.destroy()
-        execfile("gui.py")    
-
-    # create a toplevel menu
-    menubar = Menu(root)
-    menubar.add_command(label="Refresh!", command=refresh)
-    menubar.add_command(label="Quit!", command=root.quit)
-
-    # display the menu
-    root.config(menu=menubar)
-
-    scrollbar = Scrollbar(root)
     root.title("Ping Results")
     root.geometry('800x600')
     App(root)

@@ -1,170 +1,66 @@
 [
     {
-        "server_ip": "192.168.44.3", 
-        "server_location": "EH DC1", 
-        "server_name": "159DC1", 
-        "server_platform": "Windows", 
+        "server_ip": "8.8.4.4", 
+        "server_location": "GE2", 
+        "server_name": "8.8.4.4", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:31.856000"
+        "test_time": "2018-05-28 00:04:00.445448"
     }, 
     {
-        "server_ip": "192.168.12.4", 
-        "server_location": "CLN DC", 
-        "server_name": "015DC2", 
-        "server_platform": "Windows", 
+        "server_ip": "8.8.8.8", 
+        "server_location": "GE1", 
+        "server_name": "8.8.8.8", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:31.906000"
+        "test_time": "2018-05-28 00:04:00.465074"
     }, 
     {
-        "server_ip": "192.168.12.6", 
-        "server_location": "CLN FP", 
-        "server_name": "015FP1", 
-        "server_platform": "Windows", 
+        "server_ip": "216.58.198.67", 
+        "server_location": "Google", 
+        "server_name": "google.ie", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:31.959000"
+        "test_time": "2018-05-28 00:04:00.484571"
     }, 
     {
-        "server_ip": "192.168.10.3", 
-        "server_location": "ATH HQ DC1", 
-        "server_name": "001DC1", 
-        "server_platform": "Windows", 
+        "server_ip": "213.46.237.24", 
+        "server_location": "Virgin", 
+        "server_name": "virginmedia.ie", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.003000"
+        "test_time": "2018-05-28 00:04:00.510938"
     }, 
     {
-        "server_ip": "192.168.44.6", 
-        "server_location": "EH FP1", 
-        "server_name": "159FP1", 
-        "server_platform": "Windows", 
+        "server_ip": "23.253.135.79", 
+        "server_location": "Python", 
+        "server_name": "python.org", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.036000"
+        "test_time": "2018-05-28 00:04:00.554068"
     }, 
     {
-        "server_ip": "192.168.64.3", 
-        "server_location": "AL LA DC", 
-        "server_name": "069DC1", 
-        "server_platform": "Windows", 
+        "server_ip": "204.79.197.219", 
+        "server_location": "Bing", 
+        "server_name": "bing.ie", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.069000"
+        "test_time": "2018-05-28 00:04:00.684915"
     }, 
     {
-        "server_ip": "192.168.62.6", 
-        "server_location": "AL CTN FP", 
-        "server_name": "149FP1", 
-        "server_platform": "Windows", 
+        "server_ip": "1.0.0.1", 
+        "server_location": "CF2", 
+        "server_name": "1.0.0.1", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.136000"
+        "test_time": "2018-05-28 00:04:00.711133"
     }, 
     {
-        "server_ip": "192.168.64.6", 
-        "server_location": "AL LA FP", 
-        "server_name": "069FP1", 
-        "server_platform": "Windows", 
+        "server_ip": "1.1.1.1", 
+        "server_location": "CF1", 
+        "server_name": "1.1.1.1", 
+        "server_platform": "Linux", 
         "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.222000"
-    }, 
-    {
-        "server_ip": "192.168.74.3", 
-        "server_location": "AL PA DC", 
-        "server_name": "146DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.295000"
-    }, 
-    {
-        "server_ip": "192.168.36.6", 
-        "server_location": "BRD FP", 
-        "server_name": "007FP1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.361000"
-    }, 
-    {
-        "server_ip": "192.168.42.3", 
-        "server_location": "KN DC", 
-        "server_name": "009DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.405000"
-    }, 
-    {
-        "server_ip": "192.168.96.4", 
-        "server_location": "VT GY FP", 
-        "server_name": "247FP1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.474000"
-    }, 
-    {
-        "server_ip": "192.168.36.3", 
-        "server_location": "BRD DC", 
-        "server_name": "007DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.532000"
-    }, 
-    {
-        "server_ip": "192.168.96.3", 
-        "server_location": "VT GY DC", 
-        "server_name": "247DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.576000"
-    }, 
-    {
-        "server_ip": "192.168.14.6", 
-        "server_location": "YR PA FP", 
-        "server_name": "203FP1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.628000"
-    }, 
-    {
-        "server_ip": "192.168.42.6", 
-        "server_location": "KN FP", 
-        "server_name": "009FP1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.723000"
-    }, 
-    {
-        "server_ip": "192.168.54.3", 
-        "server_location": "MY DC", 
-        "server_name": "047DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.779000"
-    }, 
-    {
-        "server_ip": "192.168.14.3", 
-        "server_location": "YR PA DC", 
-        "server_name": "203DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.845000"
-    }, 
-    {
-        "server_ip": "192.168.10.6", 
-        "server_location": "ATH HQ FP1", 
-        "server_name": "001FP1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.905000"
-    }, 
-    {
-        "server_ip": "192.168.62.3", 
-        "server_location": "AL CTN DC", 
-        "server_name": "149DC1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:32.951000"
-    }, 
-    {
-        "server_ip": "192.168.74.6", 
-        "server_location": "AL PA FP", 
-        "server_name": "146FP1", 
-        "server_platform": "Windows", 
-        "server_status": "Device Online", 
-        "test_time": "2018-05-25 15:25:33.033000"
+        "test_time": "2018-05-28 00:04:00.735948"
     }
 ]
