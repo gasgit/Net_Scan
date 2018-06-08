@@ -78,10 +78,6 @@ def writelogs(col):
         complete_logs(read_logs(col))
 
 
-
-
-
-
 current_logs = []
 
 def read_logs(col):
@@ -162,9 +158,7 @@ class App(Frame):
 
     
     
-    def LoadTable(self):
-
-        
+    def LoadTable(self): 
         for i in status_collection:
             self.treeview.insert('', 'end',text=i.test_time, values=(i.server_name,i.server_location, i.server_ip, i.server_status))
            
@@ -173,9 +167,22 @@ class App(Frame):
 
 def main():
     root = Tk()
+    def refresh():
+        root.destroy()
+        execfile("gui.py")    
+
+    # create a toplevel menu
+    menubar = Menu(root)
+    menubar.add_command(label="Refresh!", command=refresh)
+    menubar.add_command(label="Quit!", command=root.quit)
+
+    # display the menu
+    root.config(menu=menubar)
+
+    scrollbar = Scrollbar(root)
     root.style = Style()
     #('clam', 'alt', 'default', 'classic')
-    root.style.theme_use("clam")
+    root.style.theme_use("classic")
 
     root.title("Ping Results")
     root.geometry('800x600')

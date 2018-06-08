@@ -82,7 +82,7 @@ def display_servers():
 def rerun():
     status_collection[:] = []
     pass_iplist(return_list())
-    return render_template('display_servers.html', status_collection= status_collection)
+    return render_template('display_servers.html', status_collection=status_collection)
 
 
 if __name__ == '__main__':
