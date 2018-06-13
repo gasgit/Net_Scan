@@ -13,6 +13,11 @@ import json
 import pprint
 
 from ip_list import return_list
+from open_web import *
+
+from threading import Thread
+from re_run import *
+
 
 ##ckpm.ckeck_platform()
 
@@ -120,14 +125,14 @@ class App(Frame):
 
     def __init__(self, parent):
         Frame.__init__(self, parent)
-        self.CreateUI()
-        self.LoadTable()
+        self.create_ui()
+        self.load_table()
         self.grid(sticky = (N,S,W,E))
         parent.grid_rowconfigure(0, weight = 1)
         parent.grid_columnconfigure(0, weight = 1)
         
 
-    def CreateUI(self):
+    def create_ui(self):
 
         tv = Treeview(self)
        
@@ -158,11 +163,14 @@ class App(Frame):
 
     
     
-    def LoadTable(self): 
+    def load_table(self): 
         for i in status_collection:
             self.treeview.insert('', 'end',text=i.test_time, values=(i.server_name,i.server_location, i.server_ip, i.server_status))
            
-
+def re_run():
+    status_collection[:] = []
+    pass_iplist(return_list())
+   
   
 
 def main():
@@ -170,15 +178,39 @@ def main():
     def refresh():
         root.destroy()
         execfile("gui.py")    
+    def run_web():
+        pass
+        #Thread(target=run_brow.start())
 
+    def open_page():
+
+        #Thread(target=open_web.open_browser()).start()
+        pass
+    def re_run_gui():
+        pass
+            
+           
+
+       # pass
+      
     # create a toplevel menu
-    menubar = Menu(root)
-    menubar.add_command(label="Refresh!", command=refresh)
-    menubar.add_command(label="Quit!", command=root.quit)
-
+    menu = Menu(root)
     # display the menu
-    root.config(menu=menubar)
+    root.config(menu=menu)
+    my_menu = Menu(menu)
+    menu.add_cascade(label="Options",menu=my_menu )
+    my_menu.add_command(label="Refresh!", command=refresh)
+    my_menu.add_separator()
+    my_menu.add_command(label="Re Run!", command=re_run_gui)
+    my_menu.add_separator()
+    my_menu.add_command(label="Run Web App!", command=run_web)
+    my_menu.add_separator()
+    my_menu.add_command(label="Open Browser!", command=open_page)
+    my_menu.add_separator()
+    my_menu.add_command(label="Quit!", command=root.quit)
+   
 
+   
     scrollbar = Scrollbar(root)
     root.style = Style()
     #('clam', 'alt', 'default', 'classic')
